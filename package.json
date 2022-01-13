@@ -2,6 +2,9 @@
   "name": "massa-sc-create",
   "version": "1.0.0",
   "main": "index.js",
+  "bin": {
+    "massa-sc-create": "index.js"
+  },
   "repository": "git@github.com:massalabs/massa-sc-create.git",
   "author": "Yvan Sraka <yvan@sraka.xyz>",
   "license": "MIT",
