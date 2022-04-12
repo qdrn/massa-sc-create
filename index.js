@@ -1,6 +1,6 @@
 #! /usr/bin/env node
 const { execSync } = require("child_process");
-const { readFileSync, writeFileSync } = require("fs");
+const { existsSync, readFileSync, writeFileSync } = require("fs");
 // Define some fancy CLI utils
 let log = (x) => console.log("\033[32m" + x + "\033[39m");
 let err = (x) => {
@@ -11,7 +11,7 @@ let err = (x) => {
 let argv = require("yargs/yargs")(process.argv.slice(2)).argv;
 let project_name = argv._[0] || "massa-sc-template";
 let cwd = require("path").join(process.cwd(), project_name);
-if (fs.existsSync(cwd)) {
+if (existsSync(cwd)) {
   err(`Directory ${cwd} already exists!`);
 }
 // Clone project according a given template
